@@ -149,13 +149,33 @@ any temperature below its boiling point is called <b><i>evaporation.</b></i></p>
               <script>
                 var delayInMilliseconds = 2000; //2 second
                 
+                function home()
+                {
+                  document.getElementById("myImage").src="Experiment.html";
+                  document.getElementById("water1").hidden=true;
+                  document.getElementById("water2").hidden=true; 
+                  document.getElementById("water3").hidden=true;
+                  document.getElementById("concludewater").hidden=true;
+                  document.getElementById("spirit1").hidden=true;
+                  document.getElementById("spirit2").hidden=true; 
+                  document.getElementById("spirit3").hidden=true;
+                  document.getElementById("concludespirit").hidden=true;
+                  document.getElementById("rerunwater").hidden=true;
+                  document.getElementById("rerunspirit").hidden=true;
+                  document.getElementById("home").hidden=true;
+
+                  document.getElementById("waterstart").hidden=false;
+                  document.getElementById("spiritstart").hidden=false;
+                }
+
                 function concludeWater()
                 {
                   document.getElementById("water1").hidden=true;
                   document.getElementById("water2").hidden=true; 
                   document.getElementById("water3").hidden=true;
                   document.getElementById("concludewater").hidden=true;
-                  document.getElementById("repeatwithspirit").hidden=false;
+                  document.getElementById("rerunwater").hidden=false;
+                  document.getElementById("home").hidden=false;
 
                   Swal.fire({
                     title: '<strong>Conclusion:</strong>',
@@ -176,7 +196,8 @@ any temperature below its boiling point is called <b><i>evaporation.</b></i></p>
                   document.getElementById("spirit2").hidden=true; 
                   document.getElementById("spirit3").hidden=true;
                   document.getElementById("concludespirit").hidden=true;
-                  document.getElementById("repeatwithwater").hidden=false;
+                  document.getElementById("rerunspirit").hidden=false;
+                  document.getElementById("home").hidden=false;
 
                   Swal.fire({
                     title: '<strong>Conclusion:</strong>',
@@ -203,8 +224,8 @@ any temperature below its boiling point is called <b><i>evaporation.</b></i></p>
                   document.getElementById("spirit1").hidden=true;
                   document.getElementById("spirit2").hidden=true; 
                   document.getElementById("spirit3").hidden=true;
-                  document.getElementById("repeatwithspirit").hidden=true;
-                  document.getElementById("repeatwithwater").hidden=true;
+                  document.getElementById("rerunwater").hidden=true;
+                  document.getElementById("home").hidden=true;
                 }
                 
                 function startSpirit()
@@ -219,8 +240,8 @@ any temperature below its boiling point is called <b><i>evaporation.</b></i></p>
                   document.getElementById("water1").hidden=true;
                   document.getElementById("water2").hidden=true; 
                   document.getElementById("water3").hidden=true;
-                  document.getElementById("repeatwithspirit").hidden=true;
-                  document.getElementById("repeatwithwater").hidden=true;
+                  document.getElementById("rerunspirit").hidden=true;
+                  document.getElementById("home").hidden=true;
                 }
 
                 function AnimateCDAC1()
@@ -318,20 +339,26 @@ any temperature below its boiling point is called <b><i>evaporation.</b></i></p>
               </script>
               
               <div class="btn-group" style="font-size: 20px;">
-                
+                <!--Start the experiments-->
                 <button id="waterstart" class="btn-group" onclick="return startWater()" style="color:white; font-size: 20px;">WATER</button>
      	          <button id="spiritstart" class="btn-group" onclick="return startSpirit()" style="color:white; font-size: 20px;">SPIRIT</button>
+                <!--Water evaportaion-->
                 <button id="water1" class="u-btn-round" hidden="true" onclick="return AnimateCDAC1();">Step 1</button>
                 <button id="water2" class="u-btn-round" hidden="true" onclick="return AnimateCDAC2();">Step 2</button>
                 <button id="water3" class="u-btn-round" hidden="true" onclick="return AnimateCDAC3();">Step 3</button>
+                <!--Spirit evaportion-->
                 <button id="spirit1" class="u-btn-round" hidden="true" onclick="return AnimateCDAC4();">Step 1</button>
                 <button id="spirit2" class="u-btn-round" hidden="true" onclick="return AnimateCDAC5();">Step 2</button>
                 <button id="spirit3" class="u-btn-round" hidden="true" onclick="return AnimateCDAC6();">Step 3</button>
-                <button id="repeatwithwater" class="u-btn-round" hidden="true" onclick="return startWater();">Repeat with water as test sample</button>
-                <button id="repeatwithspirit" class="u-btn-round" hidden="true" onclick="return startSpirit();">Repeat with spirit as test sample</button>
+                <!--Rerun the specific experiment-->
+                <button id="rerunwater" class="u-btn-round" hidden="true" onclick="return startWater()">Rerun the experiment</button>
+                <button id="rerunspirit" class="u-btn-round" hidden="true" onclick="return startSpirit()">Rerun the experiment</button>
+                <!--Conclude-->
                 <button id="concludewater" class="u-btn-round" hidden="true" onclick="return concludeWater()">Conclusion and observations</button>
                 <button id="concludespirit" class="u-btn-round" hidden="true" onclick="return concludeSpirit()">Conclusion and observations</button>
-              
+                <!--Home page-->
+                <button id="home" class="u-btn-round" hidden="true" onclick="return home()">Home</button>
+
               </div>
             </center>
           </p>
